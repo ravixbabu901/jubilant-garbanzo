@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Garbanzo Action
-        uses: jason7c/jubilant-garbanzo@main
+        uses: ravixbabu901/jubilant-garbanzo@main
         env:
           CONFIG_FILE_URL: ${{ secrets.CONFIG_FILE_URL }}
           RCLONE_CONF_URL: ${{ secrets.RCLONE_CONF_URL }}
