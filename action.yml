@@ -1,0 +1,20 @@
+name: 'Garbanzo'
+author: 'jason7c'
+description: 'Z-Mirror over workflow'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 'Build Docker image'
+      shell: bash
+      run: |
+        docker build -t garbanzo .
+
+    - name: 'Run Docker container'
+      shell: bash
+      run: |
+        docker run -e CONFIG_FILE_URL="$CONFIG_FILE_URL" -e RCLONE_CONF_URL="$RCLONE_CONF_URL" docker.io/library/garbanzo
+
+branding:
+  icon: 'terminal'
+  color: 'gray-dark'

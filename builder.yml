@@ -1,0 +1,17 @@
+name: 'Run Garbanzo'
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Garbanzo Action
+        uses: jason7c/jubilant-garbanzo@main
+        env:
+          CONFIG_FILE_URL: ${{ secrets.CONFIG_FILE_URL }}
+          RCLONE_CONF_URL: ${{ secrets.RCLONE_CONF_URL }}
+
